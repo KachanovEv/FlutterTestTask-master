@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 class SecondScreen extends StatelessWidget {
-
-
   @override
   Widget build(BuildContext context) {
     final alucard = Hero(
@@ -11,12 +9,10 @@ class SecondScreen extends StatelessWidget {
         padding: EdgeInsets.all(16.0),
         child: CircleAvatar(
           radius: 105.0,
-
           backgroundImage: AssetImage('assets/images/Computer-Programming.jpg'),
         ),
       ),
     );
-
 
     final welcome = Padding(
       padding: EdgeInsets.all(8.0),
@@ -29,15 +25,13 @@ class SecondScreen extends StatelessWidget {
     final lorem = Padding(
       padding: EdgeInsets.all(8.0),
       child: Text(
-        'Solid Software is a young IT company that specializes in mobile application development '
-            'based on next-generation technologies. We work with clients that are mostly located in the USA and Europe. '
-            'Our office is based in Kharkiv. Our team members have up to 13 years of experience in the industry and have '
-            'worked with top world companies. We look forward to you if you are responsible, want to learn new technologies '
-            'and follow mobile development trends.',
+        'BeKey is focused on creating and operating cost-effective and flexible, '
+            'dedicated teams for small and large businesses. We are young and '
+            'talented individuals who combine more than 10 years of expertise '
+            'in management, web and mobile development and startup operations.',
         style: TextStyle(fontSize: 16.0, color: Colors.white),
       ),
     );
-
 
     final body = Container(
       width: MediaQuery.of(context).size.width,

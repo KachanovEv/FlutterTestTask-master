@@ -1,30 +1,21 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:login/pages/SecondScreen.dart';
+import 'package:login/pages/second_screen.dart';
 
-
-
-
-
-
-class pageRandomColor extends StatefulWidget {
-
+class PageRandomColor extends StatefulWidget {
   @override
   _pageRandomColor createState() => new _pageRandomColor();
-
 }
 
-class _pageRandomColor extends State<pageRandomColor> {
+class _pageRandomColor extends State<PageRandomColor> {
   final Random _random = Random();
 
   Color _color = Color(0xFFFFFFFF);
-  Color colortext = Color (0xFFFFFFFF);
+  Color colortext = Color(0xFFFFFFFF);
 
-  void   changeColor() {
-
+  void changeColor() {
     setState(() {
       _color = Color.fromARGB(
-
         _random.nextInt(256),
         _random.nextInt(256),
         _random.nextInt(256),
@@ -33,66 +24,45 @@ class _pageRandomColor extends State<pageRandomColor> {
     });
 
     setState(() {
-      if (colortext != _color
-      )
-        return (
-            colortext = Color.fromARGB(
-              _random.nextInt(256),
-              _random.nextInt(256),
-              _random.nextInt(256),
-              _random.nextInt(256),
-
-            ));
+      if (colortext != _color)
+        return (colortext = Color.fromARGB(
+          _random.nextInt(256),
+          _random.nextInt(256),
+          _random.nextInt(256),
+          _random.nextInt(256),
+        ));
     });
   }
 
   @override
-  Widget build(BuildContext context)
-  {
-
+  Widget build(BuildContext context) {
     return new MaterialApp(
-        debugShowCheckedModeBanner:false,
-
-
+        debugShowCheckedModeBanner: false,
         home: new Scaffold(
             floatingActionButton: new Align(
-              alignment: Alignment( 1, -0.6),
+              alignment: Alignment(1, -0.6),
               child: RaisedButton(
                   child: Text('About us'),
-                  shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
+                  shape: new RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(30.0)),
                   color: Theme.of(context).primaryColor,
                   textColor: Colors.white,
-
                   onPressed: () => Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (BuildContext context) => SecondScreen(),
                       ))),
-
             ),
-
             appBar: AppBar(
               title: Text('Funny random color change'),
             ),
-
-            body:
-            new InkWell(
-
+            body: new InkWell(
                 onTap: changeColor,
-
                 child: Container(
-
                   child: Center(
-                      child: new Text('Hey there', style: TextStyle(color: colortext))
-
-
-                  ),
+                      child: new Text('Hey there',
+                          style: TextStyle(color: colortext))),
                   color: _color,
-                )
-            )
-        )
-    );
+                ))));
   }
 }
-
-

@@ -2,6 +2,8 @@ name: login
 description: A new Flutter project.
 
 dependencies:
+  bloc: ^0.15.0
+  flutter_bloc: ^0.21.0
   flutter:
     sdk: flutter
 
@@ -14,6 +16,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
 
 
 # For information on the generic Dart part of this file, see the
